@@ -11,7 +11,8 @@
 
 FactoryGirl.define do
   factory :category do
-    
+    title "test category"    
+    description %q(Description of test category)
   end
 
 end

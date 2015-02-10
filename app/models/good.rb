@@ -8,9 +8,11 @@
 #  price       :decimal(5, 2)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category_id :integer
 #
 
 class Good < ActiveRecord::Base
 
-  validates :name, :price, presence: true
+  belongs_to :category
+  validates :name, :price, :category_id, presence: true
 end

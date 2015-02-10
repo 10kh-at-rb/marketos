@@ -10,6 +10,7 @@
 #
 
 class Category < ActiveRecord::Base
+  has_many :goods
 
   validates :title, presence: true
 end
