@@ -12,7 +12,9 @@
 
 FactoryGirl.define do
   factory :good do
-    
+    name "test good"
+    price 14.99
+    description %q(Test good description)    
   end
 
 end
