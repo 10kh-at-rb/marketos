@@ -1,4 +1,4 @@
-h3
-  =@category.title
-.goods
-  =render @category.goods
+.col-md-12
+    ul.breadcrumb
+      = render_breadcrumbs :tag => :li, :separator => ""
+=render @category.goods
