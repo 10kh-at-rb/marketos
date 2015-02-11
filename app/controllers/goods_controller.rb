@@ -1,7 +1,7 @@
 class GoodsController < ApplicationController
 
   add_breadcrumb "Catalog", :categories_path
-
+  respond_to :js
   def index
     respond_with @goods = Good.all
   end
@@ -11,6 +11,12 @@ class GoodsController < ApplicationController
     add_breadcrumb @good.category.title, category_path(@good.category)
     add_breadcrumb @good.name, good_path(@good)
     respond_with @good
+  end
+
+  def add_to_cart
+    @good = Good.find(params[:id])
+    @current_cart.cart_items.create(good: @good)
+    respond_with(@good, location: @good)
   end
 
 end

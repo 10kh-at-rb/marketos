@@ -5,7 +5,7 @@ feature 'user can add good to cart' do
   given(:good) { create(:good) }
 
   scenario 'from category page', js: :true do
-    visit category_page(good.category)
+    visit category_path(good.category)
     click_on "Add to cart"
 
     within '.current_cart' do
@@ -14,7 +14,7 @@ feature 'user can add good to cart' do
   end
 
   scenario 'from good page', js: :true do
-    visit good_page(good)
+    visit good_path(good)
     click_on 'Add to cart'
 
     within '.current_cart' do

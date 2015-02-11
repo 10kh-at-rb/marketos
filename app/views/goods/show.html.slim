@@ -7,3 +7,5 @@ p.description
   =@good.description
 p.price
   =@good.price
+.actions
+  = link_to 'Add to cart', add_to_cart_good_path(@good), method: :post

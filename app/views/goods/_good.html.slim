@@ -3,3 +3,5 @@
       h3
         = link_to good.name, good_path(good)
       img src="http://placehold.it/300x200" alt=""
+      .actions
+        = link_to 'Add to cart', add_to_cart_good_path(good), method: :post
