@@ -13,6 +13,8 @@
 
 class Good < ActiveRecord::Base
 
+  has_many :cart_items, dependent: :restrict_with_error
   belongs_to :category
   validates :name, :price, :category_id, presence: true
+
 end

@@ -19,4 +19,5 @@ RSpec.describe Good, type: :model do
   it { should validate_presence_of :category_id }
 
   it { should belong_to :category }
+  it { should have_many :cart_items }
 end
