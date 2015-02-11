@@ -15,7 +15,7 @@ class GoodsController < ApplicationController
 
   def add_to_cart
     @good = Good.find(params[:id])
-    @current_cart.cart_items.create(good: @good)
+    @current_cart.add_good(@good)
     respond_with(@good, location: @good)
   end
 

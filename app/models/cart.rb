@@ -9,4 +9,14 @@
 
 class Cart < ActiveRecord::Base
   has_many :cart_items
+
+  def add_good(good)
+    existed_cart_item = cart_items.find_by(good_id: good.id)
+    if existed_cart_item
+      existed_cart_item.quantity += 1
+      existed_cart_item.save!
+    else
+      cart_items.create(good_id: good.id)
+    end
+  end
 end

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :categories, shallow: true do
-    resources :goods do
+  resources :categories, shallow: true, only: [:index, :show] do
+    resources :goods, only: [:index, :show] do
       post 'add_to_cart', on: :member
     end
   end

@@ -3,4 +3,4 @@
     = "#{@current_cart.cart_items.count} #{'item'.pluralize(@current_cart.cart_items.count)}"
     -@current_cart.cart_items.each do |item|
       li 
-        = item.good.name
+        = "#{item.good.name} - #{item.quantity}"
