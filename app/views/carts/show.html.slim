@@ -1,9 +1,19 @@
 -unless @current_cart.cart_items.empty?
-  = "#{@current_cart.cart_items.count} #{'item'.pluralize(@current_cart.cart_items.count)}"
-  ul.current_cart
-    -@current_cart.cart_items.each do |item|
-      li 
-        = "#{item.quantity} - #{item.good.name} - #{item.total_price}"
-
-  p.total
-    = "Total: #{@current_cart.total_price}"
+  .current_cart
+    table.table.table-hover
+      thead
+        td Item name
+        td Quantity
+        td Price
+        td Actions
+      tbody
+        -@current_cart.cart_items.each do |item|
+          =content_tag(:tr, class: "item-#{item.id}")
+            td = item.good.name
+            td = item.quantity
+            td = item.total_price
+            td = link_to 'Delete item', cart_item_path(item), method: :delete
+        tr.info
+          td Total:
+          td
+          td = @current_cart.total_price
