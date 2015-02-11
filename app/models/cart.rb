@@ -19,4 +19,8 @@ class Cart < ActiveRecord::Base
       cart_items.create(good_id: good.id)
     end
   end
+
+  def total_price
+    cart_items.map(&:total_price).sum
+  end
 end

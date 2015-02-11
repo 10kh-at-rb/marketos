@@ -36,4 +36,19 @@ RSpec.describe Cart, type: :model do
       end  
     end
   end
+
+  describe 'total_price' do
+    let(:first_good) { create(:good) }
+    let(:second_good) { create(:good, price: 46.78) }
+    let(:cart) { create(:cart) }
+
+    before do
+      cart.add_good(first_good)
+      cart.add_good(second_good)
+    end
+
+    it 'should return total_price of goods' do
+      expect(cart.total_price).to eq first_good.price + second_good.price
+    end 
+  end
 end

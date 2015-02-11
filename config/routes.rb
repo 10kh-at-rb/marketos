@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     end
   end
 
+  # resources :carts, only: :destroy
+  get '/cart', to: 'carts#show', as: 'cart'
+  delete '/cart', to: 'carts#destroy', as: 'delete_cart'
+
   root 'categories#index'
 
   # You can have the root of your site routed with "root"

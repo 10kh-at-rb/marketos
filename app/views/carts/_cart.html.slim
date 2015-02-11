@@ -1,6 +1,8 @@
 -unless @current_cart.cart_items.empty?
+  
   ul.current_cart
     = "#{@current_cart.cart_items.count} #{'item'.pluralize(@current_cart.cart_items.count)}"
     -@current_cart.cart_items.each do |item|
       li 
-        = "#{item.good.name} - #{item.quantity}"
+        = "#{item.quantity} - #{item.good.name}"
+  = link_to "Show", cart_path
