@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  quantity   :integer          default("1")
+#  order_id   :integer
 #
 
 require 'rails_helper'
@@ -15,6 +16,7 @@ require 'rails_helper'
 RSpec.describe CartItem, type: :model do
   it { should belong_to :good }
   it { should belong_to :cart }
+  it { should belong_to :order }
 
   describe 'total price' do
     let(:cart) { create(:cart) }
