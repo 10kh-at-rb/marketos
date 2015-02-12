@@ -10,7 +10,7 @@ feature 'user can clean his cart' do
 
   scenario 'user deletes all items from cart' do
     visit cart_path
-    save_and_open_page
+
     click_on 'Delete all from cart' 
 
     expect(page).to_not have_content good.name

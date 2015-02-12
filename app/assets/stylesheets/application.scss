@@ -15,3 +15,10 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.quantity {
+  width: 100%;
+  .quantity_value {
+    width: 80%;
+  }
+}

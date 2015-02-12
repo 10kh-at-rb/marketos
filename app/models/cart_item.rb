@@ -17,4 +17,8 @@ class CartItem < ActiveRecord::Base
   def total_price
     good.price * quantity
   end
+
+  def change_quantity(increment)
+    update(quantity: (quantity + increment)) if (quantity + increment) > 0
+  end
 end

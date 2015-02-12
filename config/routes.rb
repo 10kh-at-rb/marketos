@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   # resources :carts, only: :destroy
   get '/cart', to: 'carts#show', as: 'cart'
   delete '/cart', to: 'carts#destroy', as: 'delete_cart'
-  resources :cart_items, only: :destroy
+  resources :cart_items, only: :destroy do
+    patch 'increase', on: :member
+    patch 'decrease', on: :member
+  end
 
   root 'categories#index'
 

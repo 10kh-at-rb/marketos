@@ -12,7 +12,9 @@
 
 FactoryGirl.define do
   factory :cart_item do
-    cart ""
+    cart
+    good
+    quantity 1
   end
 
 end

@@ -2,7 +2,6 @@ require 'feature_helper'
 
 feature 'User can delete cart item from cart' do
 
-  # given(:cart) { create(:cart) }
   given(:first_good) { create(:good, name: 'First') }
   given(:second_good) { create(:good, name: 'Second') }
 
@@ -15,9 +14,9 @@ feature 'User can delete cart item from cart' do
 
   scenario 'user deletes first good from cart' do
     visit cart_path
-    # save_and_open_page
-    within ".item-1" do
-      click_on 'Delete item'
+    
+    within ".item-#{first_good.id}" do
+      find("a[id^='remove-item']").click
     end
 
     expect(page).to_not have_content first_good.name

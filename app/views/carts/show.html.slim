@@ -10,9 +10,21 @@
         -@current_cart.cart_items.each do |item|
           =content_tag(:tr, class: "item-#{item.id}")
             td = item.good.name
-            td = item.quantity
+            td
+              table.quantity
+                tr
+                  td.quantity_value
+                    = item.quantity
+                  td
+                    =link_to  increase_cart_item_path(item), method: :patch, id: "increase-item-#{item.id}"
+                      i.glyphicon.glyphicon-arrow-up
+                  td
+                    =link_to  decrease_cart_item_path(item), method: :patch, id: "decrease-item-#{item.id}"
+                      i.glyphicon.glyphicon-arrow-down
             td = item.total_price
-            td = link_to 'Delete item', cart_item_path(item), method: :delete
+            td 
+              = link_to cart_item_path(item), method: :delete, id: "remove-item-#{item.id}"
+                i.glyphicon.glyphicon-remove
         tr.info
           td Total:
           td

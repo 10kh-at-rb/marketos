@@ -28,4 +28,29 @@ RSpec.describe CartItem, type: :model do
       expect(cart.cart_items.first.total_price).to eq 2*good.price
     end
   end
+
+  describe 'change_quantity' do
+    
+    context 'when quantity remain positive' do
+      let(:cart_item) { create(:cart_item) }
+    
+      it 'should change_quantity by arg' do
+        cart_item.change_quantity(3)
+
+        expect(cart_item.quantity).to eq 4
+      end
+
+    end
+
+    context 'when quantity remain negative' do
+      let(:cart_item) { create(:cart_item, quantity: 4) }
+
+      it 'should not change_quantity' do
+        cart_item.change_quantity(-10)
+
+        expect(cart_item.quantity).to eq 4
+      end
+    end
+
+  end
 end
