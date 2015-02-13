@@ -23,4 +23,24 @@ RSpec.describe Order, type: :model do
   it { should validate_presence_of :payment_type }
   it { should validate_inclusion_of(:payment_type).in_array(%w(Cash Card)) }
 
+  describe 'add_items_from_cart' do
+    let(:good) { create(:good) }
+    let(:cart) { create(:cart) }
+    let(:order) { create(:order) }
+
+    before do
+      cart.add_good(good)
+      order.add_items_from_cart(cart)
+    end
+
+    it 'should create cart_items for order' do
+      expect(order.cart_items.count).to eq 1
+    end
+
+    it 'should create cart_items with correct good and quantity' do
+      expect(order.cart_items.first.good.name).to eq good.name
+      expect(order.cart_items.first.quantity).to eq 1
+    end
+  end
+
 end

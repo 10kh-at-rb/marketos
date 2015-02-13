@@ -1,0 +1,25 @@
+p.greeting
+  =%Q(Thank you for order, #{@order.name.capitalize})
+.order-details
+  p ="Name: #{@order.name}"
+  p ="phone: #{@order.phone}" if @order.phone
+  p ="email: #{@order.email}" if @order.email
+  p ="address: #{@order.address}" if @order.address
+  p ="Payment type: #{@order.payment_type}" if @order.payment_type
+
+  .order-items
+    table.table.table-hover
+      thead
+        td Item name
+        td Quantity
+        td Price
+      tbody
+        -@order.cart_items.each do |item|
+          =content_tag(:tr, class: "item-#{item.id}")
+            td = item.good.name
+            td = item.quantity
+            td = item.total_price
+        tr.info
+          td Total:
+          td
+          td = @order.total_price

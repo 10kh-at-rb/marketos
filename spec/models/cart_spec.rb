@@ -51,4 +51,18 @@ RSpec.describe Cart, type: :model do
       expect(cart.total_price).to eq first_good.price + second_good.price
     end 
   end
+
+  describe 'empty?' do
+    let(:cart) { create(:cart) }
+    let(:good) { create(:good) }
+
+    it 'should return false if there is no cart_items in cart' do
+      expect(cart.empty?).to eq true
+    end
+
+    it 'should return false if there is cart_items in cart' do
+      cart.add_good(good)
+      expect(cart.empty?).to eq false
+    end
+  end
 end

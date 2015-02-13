@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :categories, shallow: true, only: [:index, :show] do
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
     patch 'increase', on: :member
     patch 'decrease', on: :member
   end
+
+  resources :orders, only: [:new, :create, :show]
 
   root 'categories#index'
 

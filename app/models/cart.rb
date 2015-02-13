@@ -23,4 +23,8 @@ class Cart < ActiveRecord::Base
   def total_price
     cart_items.map(&:total_price).sum
   end
+
+  def empty?
+    cart_items.empty?
+  end
 end

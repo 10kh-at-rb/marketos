@@ -14,11 +14,11 @@
 
 FactoryGirl.define do
   factory :order do
-    name "MyString"
-email "MyString"
-phone "MyString"
-address "MyText"
-payment_type "MyString"
+    name "Sergey"
+    email "sergey@market.test"
+    phone "0123456789"
+    address "North Pole"
+    payment_type "Cash"
   end
 
 end

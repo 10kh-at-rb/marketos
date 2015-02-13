@@ -1,0 +1,25 @@
+=form_for(@order, html: { role: 'form', class: 'col-md-6' }) do |f|
+  fieldset
+    .form-group
+      =f.label :name
+      = render 'error_message', attribute: :name
+      =f.text_field :name, class: 'form-control'
+    .form-group
+      =f.label :email
+      = render 'error_message', attribute: :email
+      =f.email_field :email, class: 'form-control'
+    .form-group
+      =f.label :phone
+      = render 'error_message', attribute: :phone
+      =f.text_field :phone, class: 'form-control'
+    .form-group
+      =f.label :address
+      = render 'error_message', attribute: :address
+      =f.text_area :address, class: 'form-control'
+    .form-group
+      =f.label :payment_type
+      = render 'error_message', attribute: :payment_type
+      =f.select :payment_type, Order::PAYMENT_TYPES, {}, { class: 'form-control' }
+    
+    =f.submit 'Save order', class: "btn btn-success pull-right"
+
