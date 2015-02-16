@@ -16,7 +16,6 @@ class GoodsController < ApplicationController
   def add_to_cart
     @good = Good.find(params[:id])
     @current_cart.add_good(@good)
-    respond_with(@good, location: @good)
   end
 
 end

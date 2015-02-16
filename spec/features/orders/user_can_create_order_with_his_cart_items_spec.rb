@@ -1,6 +1,6 @@
 require 'feature_helper'
 
-feature 'user can create with his cart items' do
+feature 'user can create with his cart items', js: true do
 
   given(:first_good) { create(:good, name: 'First good', price: 13.89) }
   given(:second_good) { create(:good, name: 'Second good', price: 24.13) }

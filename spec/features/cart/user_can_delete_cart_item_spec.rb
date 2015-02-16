@@ -1,6 +1,6 @@
 require 'feature_helper'
 
-feature 'User can delete cart item from cart' do
+feature 'User can delete cart item from cart', js: true do
 
   given(:first_good) { create(:good, name: 'First') }
   given(:second_good) { create(:good, name: 'Second') }

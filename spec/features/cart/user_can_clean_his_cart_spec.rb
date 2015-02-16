@@ -1,6 +1,6 @@
 require 'feature_helper' 
 
-feature 'user can clean his cart' do
+feature 'user can clean his cart', js: true do
   given(:good) { create(:good) }
 
   before do

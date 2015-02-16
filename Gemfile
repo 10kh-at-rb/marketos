@@ -28,7 +28,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'responders'
 gem 'slim-rails'
-gem "breadcrumbs_on_rails"
+gem 'breadcrumbs_on_rails'
+gem 'jquery-ui-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

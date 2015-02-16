@@ -6,4 +6,4 @@
       p.price
         =number_to_currency good.price
       .actions
-        = link_to 'Add to cart', add_to_cart_good_path(good), method: :post
+        = link_to 'Add to cart', add_to_cart_good_path(good), method: :post, remote: true

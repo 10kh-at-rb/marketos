@@ -1,6 +1,6 @@
 require 'feature_helper'
 
-feature 'user can change item quantity in cart' do
+feature 'user can change item quantity in cart', js: true do
 
   given(:good) { create(:good) }
 

@@ -8,7 +8,7 @@ feature 'user can add good to cart' do
     visit category_path(good.category)
     click_on "Add to cart"
 
-    within '.current_cart' do
+    within '#current-cart' do
       expect(page).to have_content "1 item"
     end
   end
@@ -17,7 +17,7 @@ feature 'user can add good to cart' do
     visit good_path(good)
     click_on 'Add to cart'
 
-    within '.current_cart' do
+    within '#current-cart' do
       expect(page).to have_content "1 item"
     end
   end
