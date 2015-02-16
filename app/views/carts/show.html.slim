@@ -21,14 +21,14 @@
                   td
                     =link_to  decrease_cart_item_path(item), method: :patch, id: "decrease-item-#{item.id}"
                       i.glyphicon.glyphicon-arrow-down
-            td = item.total_price
+            td = number_to_currency item.total_price
             td 
               = link_to cart_item_path(item), method: :delete, id: "remove-item-#{item.id}"
                 i.glyphicon.glyphicon-remove
         tr.info
           td Total:
           td
-          td = @current_cart.total_price
+          td = number_to_currency @current_cart.total_price
   =link_to "Delete all from cart", delete_cart_path, method: :delete, id: 'clean-cart', class: "btn btn-danger"
   br
   =link_to "Checkout", new_order_path, class: "btn btn-success", disabled: @current_cart.empty?
