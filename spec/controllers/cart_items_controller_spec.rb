@@ -6,7 +6,7 @@ RSpec.describe CartItemsController, type: :controller do
     let(:cart_item) { create(:cart_item) }
 
     it 'should change quantity by 1' do
-      patch :increase, id: cart_item
+      patch :increase, id: cart_item, format: :js
       cart_item.reload
 
       expect(cart_item.quantity).to eq 2
@@ -18,7 +18,7 @@ RSpec.describe CartItemsController, type: :controller do
       let(:cart_item) { create(:cart_item, quantity: 2) }
 
       it 'should change quantity by -1' do
-        patch :decrease, id: cart_item
+        patch :decrease, id: cart_item, format: :js
         cart_item.reload
 
         expect(cart_item.quantity).to eq 1
@@ -29,7 +29,7 @@ RSpec.describe CartItemsController, type: :controller do
       let(:cart_item) { create(:cart_item) }
 
       it 'should not change quantity' do
-        patch :decrease, id: cart_item
+        patch :decrease, id: cart_item, format: :js
         cart_item.reload
 
         expect(cart_item.quantity).to eq 1

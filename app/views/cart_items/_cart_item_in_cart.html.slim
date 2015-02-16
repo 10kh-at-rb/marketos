@@ -1,0 +1,16 @@
+td = item.good.name
+td
+  table.quantity
+    tr
+      td.quantity_value
+        = item.quantity
+      td
+        =link_to  increase_cart_item_path(item), method: :patch, id: "increase-item-#{item.id}", remote: true
+          i.glyphicon.glyphicon-arrow-up
+      td
+        =link_to  decrease_cart_item_path(item), method: :patch, id: "decrease-item-#{item.id}", remote: true
+          i.glyphicon.glyphicon-arrow-down
+td = number_to_currency item.total_price
+td 
+  = link_to cart_item_path(item), method: :delete, id: "remove-item-#{item.id}"
+    i.glyphicon.glyphicon-remove
