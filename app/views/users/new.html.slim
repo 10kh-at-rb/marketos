@@ -1,0 +1,20 @@
+h1 Sign up
+=form_for @user do |f|
+  .form-group
+    =f.label :name
+    = render 'shared/error_message', attribute: :name, model: @user
+    =f.text_field :name, class: 'form-control'
+  .form-group
+    =f.label :email
+    = render 'shared/error_message', attribute: :email, model: @user
+    =f.email_field :email, class: 'form-control'
+  .form-group
+    =f.label :password
+    = render 'shared/error_message', attribute: :password, model: @user
+    =f.password_field :password, class: 'form-control'
+  .form-group
+    =f.label :password_confirmation
+    = render 'shared/error_message', attribute: :password_confirmation, model: @user
+    =f.password_field :password_confirmation, class: 'form-control'
+  .form-group
+    =f.submit 'Sign up'

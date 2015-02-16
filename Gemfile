@@ -30,6 +30,7 @@ gem 'responders'
 gem 'slim-rails'
 gem 'breadcrumbs_on_rails'
 gem 'jquery-ui-rails'
+gem 'sorcery'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

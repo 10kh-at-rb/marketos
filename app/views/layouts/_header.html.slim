@@ -2,6 +2,9 @@
   .navbar-inner
     .col-md-2.logo
       =link_to "Market", root_path
-
+    .col-md-6
+      | search form
+    .col-md-4
+      =render 'layouts/user_or_sign_in'
     ul.nav.nav-pills
       li = link_to "Categories", categories_path

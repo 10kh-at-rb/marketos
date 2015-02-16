@@ -2,23 +2,23 @@
   fieldset
     .form-group
       =f.label :name
-      = render 'error_message', attribute: :name
+      = render 'shared/error_message', attribute: :name, model: @order
       =f.text_field :name, class: 'form-control'
     .form-group
       =f.label :email
-      = render 'error_message', attribute: :email
+      = render 'shared/error_message', attribute: :email, model: @order
       =f.email_field :email, class: 'form-control'
     .form-group
       =f.label :phone
-      = render 'error_message', attribute: :phone
+      = render 'shared/error_message', attribute: :phone, model: @order
       =f.text_field :phone, class: 'form-control'
     .form-group
       =f.label :address
-      = render 'error_message', attribute: :address
+      = render 'shared/error_message', attribute: :address, model: @order
       =f.text_area :address, class: 'form-control'
     .form-group
       =f.label :payment_type
-      = render 'error_message', attribute: :payment_type
+      = render 'shared/error_message', attribute: :payment_type, model: @order
       =f.select :payment_type, Order::PAYMENT_TYPES, {}, { class: 'form-control' }
     
     =f.submit 'Save order', class: "btn btn-success pull-right"

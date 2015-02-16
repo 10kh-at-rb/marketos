@@ -18,6 +18,12 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:new, :create, :show]
 
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  delete 'logout', to: 'sessions#destroy', as: :logout
+  resources :users
+  resources :sessions
+
   root 'categories#index'
 
   # You can have the root of your site routed with "root"

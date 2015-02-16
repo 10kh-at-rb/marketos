@@ -1,0 +1,3 @@
+-if model.errors.full_messages_for(attribute).any?
+  .alert.alert-danger
+    = model.errors.full_messages_for(attribute).to_sentence
