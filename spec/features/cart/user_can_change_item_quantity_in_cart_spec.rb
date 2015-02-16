@@ -20,7 +20,7 @@ feature 'user can change item quantity in cart', js: true do
   end
 
   scenario 'user tries to decrease item quantity when quantity > 1' do
-    # save_and_open_page
+
     find("a[id^='increase-item']").click
     find("a[id^='decrease-item']").click
 
@@ -29,7 +29,7 @@ feature 'user can change item quantity in cart', js: true do
     end
   end
 
-  scenario 'user tries to decrease item quantity when quantity < 1' do
+  scenario 'user tries to decrease item quantity when quantity = 1' do
     find("a[id^='decrease-item']").click
 
     within '.quantity_value' do
