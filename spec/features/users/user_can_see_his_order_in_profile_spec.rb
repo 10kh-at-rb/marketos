@@ -19,6 +19,7 @@ feature 'Registred user can see his order in profile', js: true do
 
   scenario 'user visits his profile' do
     visit profile_path
+    find("a[data-parent='#accordion']").click
 
     expect(page).to have_content '1 order'
     expect(page).to have_content 'First good'

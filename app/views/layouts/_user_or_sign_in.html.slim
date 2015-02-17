@@ -1,5 +1,5 @@
 -if current_user
-  = current_user.name
+  = link_to current_user.name, profile_path
   br
   =link_to 'Logout', logout_path, method: :delete
 -else
