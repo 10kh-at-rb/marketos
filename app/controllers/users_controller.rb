@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  load_and_authorize_resource
   def new
     respond_with @user = User.new
   end

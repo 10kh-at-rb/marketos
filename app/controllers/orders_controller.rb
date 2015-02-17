@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
 
+  load_and_authorize_resource
+
   def show
-    respond_with (@order = Order.find(params[:id]))
+    respond_with @order
   end
 
   def new
-    respond_with @order = Order.new
+    respond_with @order
   end
 
   def create

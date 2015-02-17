@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  authorize_resource
 
   def show
     respond_with(@current_cart)

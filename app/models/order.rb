@@ -16,6 +16,7 @@ class Order < ActiveRecord::Base
   PAYMENT_TYPES = %w(Cash Card)
 
   has_many :cart_items
+  belongs_to :user
 
   validates :name, :phone, :payment_type, presence: true
   validates :payment_type, inclusion: PAYMENT_TYPES

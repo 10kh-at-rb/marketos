@@ -20,6 +20,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+  has_one :cart
+  has_many :orders
+
   validates :password, length: { minimum: 4 }
   validates :password, confirmation: true
   validates :name, :email, :password_confirmation, presence:  true

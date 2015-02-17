@@ -18,9 +18,18 @@
 #
 
 FactoryGirl.define do
+
+  sequence :email do |n|
+    "testuser-#{n}@market.test"
+  end
+
+  sequence :name do |n|
+    "testuser-#{n}"
+  end
+
   factory :user do
-    name "Sergey"
-    email "sergey@market.test"
+    name
+    email
     password "0123456789"   
     password_confirmation "0123456789" 
     salt "0ed165ec489b3da4f0e4ea40743ed3402e1d8242c00515e0016ec9e5a"

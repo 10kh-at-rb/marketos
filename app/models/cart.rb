@@ -9,6 +9,7 @@
 
 class Cart < ActiveRecord::Base
   has_many :cart_items, dependent: :destroy
+  belongs_to :user
 
   def add_good(good)
     existed_cart_item = cart_items.find_by(good_id: good.id)
