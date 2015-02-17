@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     respond_with @user = User.new
   end
 
+  def show
+    if current_user
+      respond_with current_user
+    else
+      render plain: 'You are guest and have not profile'
+    end
+  end
+
   def create
     @user = User.create(user_params)
     auto_login(@user)

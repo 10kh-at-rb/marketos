@@ -1,0 +1,7 @@
+h3
+  =current_user.name
+p.orders
+  ="You have #{current_user.orders.count} #{'order'.pluralize(current_user.orders.count)}"
+
+  -current_user.orders.each do |order|
+    =render order
