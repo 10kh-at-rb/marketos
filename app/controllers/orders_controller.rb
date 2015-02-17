@@ -7,11 +7,12 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @order = current_user ? current_user.orders.new(name: current_user.name, phone: current_user.phone, address: current_user.address) : Order.new
     respond_with @order
   end
 
   def create
-    @order = Order.create(order_params)
+    @order = current_user ? current_user.orders.create(order_params) : Order.create(order_params)
     if @order.save
       @order.add_items_from_cart(@current_cart)
       @current_cart.destroy

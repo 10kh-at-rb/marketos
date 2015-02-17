@@ -4,6 +4,7 @@ feature 'user can create with his cart items', js: true do
 
   given(:first_good) { create(:good, name: 'First good', price: 13.89) }
   given(:second_good) { create(:good, name: 'Second good', price: 24.13) }
+  given(:user) { create(:user, name: 'SignedUser', phone: '0123456789', address: 'North Pole') }
 
   before do
     visit good_path(first_good)
@@ -44,6 +45,19 @@ feature 'user can create with his cart items', js: true do
       click_on 'Save order'
 
       expect(page).to have_content 'Name can\'t be blank '
+    end
+      
+    scenario 'when user signed in' do
+      sign_in(user)
+      visit cart_path
+      find("a[href='/orders/new']").click
+      click_on 'Save order'
+
+      expect(page).to have_content 'Thank you for order, Signeduser'
+      expect(page).to have_content '0123456789'
+      expect(page).to have_content 'North Pole'
+      expect(page).to have_content first_good.name
+      expect(page).to have_content second_good.name
     end
 
   end

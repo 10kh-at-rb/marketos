@@ -7,7 +7,6 @@
 #  email                           :string           not null
 #  crypted_password                :string
 #  salt                            :string
-#  admin                           :boolean          not null
 #  created_at                      :datetime
 #  updated_at                      :datetime
 #  remember_me_token               :string
@@ -15,6 +14,9 @@
 #  reset_password_token            :string
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
+#  admin                           :boolean          default("false")
+#  phone                           :string
+#  address                         :text
 #
 
 require 'rails_helper'
