@@ -1,6 +1,6 @@
 -if current_user
   = link_to current_user.name, profile_path
   br
-  =link_to 'Logout', logout_path, method: :delete
+  =link_to t(:logout), logout_path, method: :delete
 -else
-  =link_to 'Sign in', login_path
+  =link_to t(:login), login_path

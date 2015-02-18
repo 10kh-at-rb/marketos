@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
 
-  add_breadcrumb "Catalog", :categories_path
+  add_breadcrumb I18n::t(:categories), :categories_path
   respond_to :js
   load_and_authorize_resource
   def index

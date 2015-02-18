@@ -6,7 +6,7 @@ feature 'user can add good to cart' do
 
   scenario 'from category page', js: :true do
     visit category_path(good.category)
-    click_on "Add to cart"
+    find("a[href*='add_to_cart']").click
 
     within '#current-cart' do
       expect(page).to have_content "1 item"
@@ -15,7 +15,7 @@ feature 'user can add good to cart' do
 
   scenario 'from good page', js: :true do
     visit good_path(good)
-    click_on 'Add to cart'
+    find("a[href*='add_to_cart']").click
 
     within '#current-cart' do
       expect(page).to have_content "1 item"

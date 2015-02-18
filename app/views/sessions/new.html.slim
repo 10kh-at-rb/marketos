@@ -1,13 +1,13 @@
 .col-md-6
-  h1 Log in
+  h1 = t(:login)
   - flash.each do |name, msg|
     =content_tag(:div, msg, id: "flash_#{name}", class: "alert alert-danger")
   =form_tag sessions_path, role: 'form', method: :post do
     .form-group
-      =label_tag :name
+      =label_tag :name, t('activerecord.attributes.user.name')
       =text_field_tag :name, nil, class: 'form-control'
     .form-group
-      =label_tag :password
+      =label_tag :password, t('activerecord.attributes.user.password')
       =password_field_tag :password, nil, class: 'form-control'
     .form-group
-      =submit_tag 'Login', class: 'btn btn-success'
+      =submit_tag t(:login), class: 'btn btn-success'

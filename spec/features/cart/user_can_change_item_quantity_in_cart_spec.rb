@@ -6,7 +6,7 @@ feature 'user can change item quantity in cart', js: true do
 
   before do
     visit good_path(good)
-    click_on "Add to cart"
+    find("a[href*='add_to_cart']").click
     visit cart_path
   end
 

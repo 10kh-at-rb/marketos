@@ -1,0 +1,58 @@
+ru:
+  logout: 'Выйти'
+  login: 'Войти'
+  signup: 'Зарегестрироваться'
+  you_have: 'У вас'
+  order: 'заказ'
+  notification_orders:
+    one: 'У вас 1 заказ'
+    few: 'У вас %{count} заказа'
+    many: 'У вас %{count} заказов'
+  order_created: 'Спасибо за заказ %{name}'
+
+  categories: 'Каталог'
+  show_cart: 'Показать'
+
+  add_to_cart: 'Купить'
+  save_order: 'Разместить заказ'
+  save_user: 'Зарегестрироваться'
+
+  invalid_email_or_password: 'Указан нерпавильный email или пароль неверен'
+
+  number:
+    currency:
+      format:
+        unit_html: 'руб.'
+        delimiter: ','
+        separator: '.'
+        precision: 2
+        format: '%n %u'
+
+  activerecord:
+    models:
+      user: Пользователь
+      good: Товар
+      category: Категория
+      cart: Корзина
+      order: Заказ
+    attributes:
+      user:
+        name: Имя
+        email: электронная почта
+        phone: телефон
+        address: адрес
+        password: пароль
+        password_confirmation: подтверждение пароля
+      good:
+        name: Название
+        description: описание
+        price: цена
+      category:
+        title: название
+        description: описание
+      order:
+        name: Имя покупателя
+        email: электронная почта
+        phone: телефон
+        address: адрес
+        payment_type: способ оплаты

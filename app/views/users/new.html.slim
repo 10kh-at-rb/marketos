@@ -1,4 +1,5 @@
-h1 Sign up
+h1 
+  = t :signup
 =form_for @user do |f|
   .form-group
     =f.label :name
@@ -17,4 +18,4 @@ h1 Sign up
     = render 'shared/error_message', attribute: :password_confirmation, model: @user
     =f.password_field :password_confirmation, class: 'form-control'
   .form-group
-    =f.submit 'Sign up'
+    =f.submit t(:save_user)

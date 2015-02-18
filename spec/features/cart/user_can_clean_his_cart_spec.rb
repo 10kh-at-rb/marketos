@@ -5,7 +5,7 @@ feature 'user can clean his cart', js: true do
 
   before do
     visit good_path(good)
-    click_on "Add to cart"
+    find("a[href*='add_to_cart']").click
   end
 
   scenario 'user deletes all items from cart' do

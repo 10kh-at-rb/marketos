@@ -8,9 +8,9 @@ feature 'user can create with his cart items', js: true do
 
   before do
     visit good_path(first_good)
-    click_on 'Add to cart'
+    find("a[href*='add_to_cart']").click
     visit good_path(second_good)
-    click_on 'Add to cart'
+    find("a[href*='add_to_cart']").click
     visit cart_path
   end
 
@@ -26,13 +26,13 @@ feature 'user can create with his cart items', js: true do
 
       find("a[href='/orders/new']").click
 
-      fill_in 'Name', with: 'Sergey'
-      fill_in 'Phone', with: '0123456789'
-      fill_in 'Address', with: 'North Pole' 
+      find("input[id='order_name']").set('Sergey')
+      find("input[id='order_phone']").set('0123456789')
+      find("textarea[id='order_address']").set('North Pole' )
 
-      click_on 'Save order'
+      find("input[type='submit']").click
 
-      expect(page).to have_content 'Thank you for order, Sergey'
+      expect(page).to have_content t(:order_created, name: 'Sergey')
       expect(page).to have_content '0123456789'
       expect(page).to have_content 'North Pole'
       expect(page).to have_content first_good.name
@@ -42,18 +42,18 @@ feature 'user can create with his cart items', js: true do
 
     scenario 'with invalid attributes' do
       find("a[href='/orders/new']").click
-      click_on 'Save order'
+      find("input[type='submit']").click
 
-      expect(page).to have_content 'Name can\'t be blank '
+      expect(page).to have_content t('activerecord.errors.messages.blank')
     end
       
     scenario 'when user signed in' do
       sign_in(user)
       visit cart_path
       find("a[href='/orders/new']").click
-      click_on 'Save order'
+      find("input[type='submit']").click
 
-      expect(page).to have_content 'Thank you for order, Signeduser'
+      expect(page).to have_content t(:order_created, name: user.name)
       expect(page).to have_content '0123456789'
       expect(page).to have_content 'North Pole'
       expect(page).to have_content first_good.name
