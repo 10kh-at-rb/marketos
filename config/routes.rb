@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :sessions, only: [:create]
 
+  namespace :admin do
+    get '/', to: 'dashboard#index'
+  end
+
   root 'categories#index'
 
   # You can have the root of your site routed with "root"

@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
   def create
     user = login(params[:name], params[:password])
     if user
-      redirect_to root_path
+      if user.admin
+        redirect_to admin_path
+      else
+        redirect_to root_path
+      end
     else
       flash.now.alert = t(:invalid_email_or_password)
       render :new
