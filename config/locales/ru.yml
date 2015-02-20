@@ -55,6 +55,7 @@ ru:
       category:
         title: название
         description: описание
+        picture: изображение
       order:
         name: Имя покупателя
         email: электронная почта

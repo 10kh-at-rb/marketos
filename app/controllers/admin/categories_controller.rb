@@ -12,7 +12,7 @@ class Admin::CategoriesController < Admin::AdminController
   private
 
   def category_params
-    params.require(:category).permit(:title, :description)
+    params.require(:category).permit(:title, :description, :picture)
   end
 
 end

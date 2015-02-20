@@ -5,8 +5,12 @@
       = render 'shared/error_message', attribute: :title, model: @category
       = f.text_field :title, class: 'form-control'
     .form-group
+      = f.label :picture
+      = render 'shared/error_message', attribute: :picture, model: @category
+      = f.file_field :picture
+    .form-group
       = f.label :description
       = render 'shared/error_message', attribute: :description, model: @category
-      = f.text_area :description
+      = f.text_area :description, class: 'form-control'
     
     =f.submit t(:save), class: "btn btn-success pull-right"

@@ -33,6 +33,8 @@ gem 'jquery-ui-rails'
 gem 'sorcery'
 gem 'cancancan'
 gem 'russian', '~> 0.6.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
