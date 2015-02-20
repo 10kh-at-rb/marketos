@@ -1,2 +1,14 @@
 h3
   = "Hello #{current_user.name}"
+p.orders
+  = t "notification_orders", count: @orders.count
+.panel-group#accordion
+  -@orders.each do |order|
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          a data-toggle="collapse" data-parent="#accordion" href="#order-#{order.id}"
+            = "#{t(:order)} #{order.id}"
+      div id="order-#{order.id}" class="panel-collapse collapse"
+        .panel-body
+          =render 'orders/order', order: order
