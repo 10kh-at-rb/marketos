@@ -1,0 +1,13 @@
+table.table.table-hover.table-bordered
+  thead
+    td =t('activerecord.attributes.category.title')
+    td =t('activerecord.attributes.category.description')
+    td = t :actions
+  tbody
+    tr.new-category
+    -@categories.each do |cat|
+      tr class="category-#{cat.id}"
+        td =link_to "#{cat.title} - #{cat.goods.count}", admin_category_path(cat)
+        td = cat.description
+        td = link_to t(:edit), edit_admin_category_path(cat)
+    td =link_to t(:add_category), new_admin_category_path

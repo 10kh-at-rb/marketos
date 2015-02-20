@@ -18,6 +18,10 @@ ru:
   save_user: 'Зарегестрироваться'
   save: 'Сохранить'
 
+  dashboard: 'Заказы'
+  actions: 'Операции'
+  admin_categories: 'Категории'
+
   invalid_email_or_password: 'Указан неправильный email или пароль неверен'
 
   add_category: 'Добавить категорию'
