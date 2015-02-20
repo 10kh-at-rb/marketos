@@ -16,8 +16,12 @@ ru:
   add_to_cart: 'Купить'
   save_order: 'Разместить заказ'
   save_user: 'Зарегестрироваться'
+  save: 'Сохранить'
 
-  invalid_email_or_password: 'Указан нерпавильный email или пароль неверен'
+  invalid_email_or_password: 'Указан неправильный email или пароль неверен'
+
+  add_category: 'Добавить категорию'
+  add_good: 'Добавить товар'
 
   number:
     currency:
@@ -47,6 +51,7 @@ ru:
         name: Название
         description: описание
         price: цена
+        category_id: Категория
       category:
         title: название
         description: описание

@@ -1,0 +1,12 @@
+=form_for(@category, url: admin_categories_path ,html: { role: 'form', class: 'col-md-6' }) do |f|
+  fieldset
+    .form-group
+      = f.label :title
+      = render 'shared/error_message', attribute: :title, model: @category
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :description
+      = render 'shared/error_message', attribute: :description, model: @category
+      = f.text_area :description
+    
+    =f.submit t(:save), class: "btn btn-success pull-right"

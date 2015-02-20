@@ -9,4 +9,8 @@ html
     .container-fluid
       .row-fluid
         .col-md-12
+          =render 'admin/layouts/header'
+        .col-md-2
+          =render 'admin/layouts/sidebar'
+        .col-md-10
           =yield

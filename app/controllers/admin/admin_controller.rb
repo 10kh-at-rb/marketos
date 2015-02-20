@@ -5,7 +5,7 @@ class Admin::AdminController < ActionController::Base
 
   before_action :check_admin
   respond_to :html
-
+  layout '/admin/layouts/admin'
   private
 
   def check_admin
