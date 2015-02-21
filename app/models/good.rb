@@ -14,6 +14,7 @@
 class Good < ActiveRecord::Base
 
   has_many :cart_items, dependent: :restrict_with_error
+  has_many :photos, dependent: :destroy
   belongs_to :category
   validates :name, :price, :category_id, presence: true
 

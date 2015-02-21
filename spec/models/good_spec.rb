@@ -20,4 +20,5 @@ RSpec.describe Good, type: :model do
 
   it { should belong_to :category }
   it { should have_many :cart_items }
+  it { should have_many :photos }
 end
