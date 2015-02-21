@@ -10,7 +10,16 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def create
-    respond_with(@category = Category.create(category_params), location: admin_path)
+    respond_with(@category = Category.create(category_params), location:  admin_categories_path )
+  end
+
+  def edit
+    respond_with @category
+  end
+
+  def update
+    @category.update(category_params)
+    respond_with(@category, location:  admin_categories_path)
   end
 
   private

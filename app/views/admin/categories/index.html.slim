@@ -9,5 +9,7 @@ table.table.table-hover.table-bordered
       tr class="category-#{cat.id}"
         td =link_to "#{cat.title} - #{cat.goods.count}", admin_category_path(cat)
         td = cat.description
-        td = link_to t(:edit), edit_admin_category_path(cat)
+        td 
+          = link_to t(:edit), edit_admin_category_path(cat), class: 'btn btn-info'
+          = link_to t(:destroy), admin_category_path(cat), method: :delete, class: 'btn btn-danger'
     td =link_to t(:add_category), new_admin_category_path
