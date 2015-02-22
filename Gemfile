@@ -35,6 +35,7 @@ gem 'cancancan'
 gem 'russian', '~> 0.6.0'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'nested_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

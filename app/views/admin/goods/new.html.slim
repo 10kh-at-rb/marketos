@@ -1,4 +1,4 @@
-=form_for(@good, url: admin_goods_path, html: { role: 'form', class: 'col-md-6' }) do |f|
+=nested_form_for(@good, url: admin_goods_path, html: { role: 'form', class: 'col-md-6' }) do |f|
   fieldset
     .form-group
       = f.label :name
@@ -14,5 +14,10 @@
     .form-group
       =f.label :price
       =f.text_field :price, class: 'form-control'
+    .form-group
+      =f.fields_for :photos, @good.photos.build do |ph|
+        =ph.label :file
+        =ph.file_field :file
+      =f.link_to_add t(:add_photo), :photos
     
     =f.submit t(:save), class: "btn btn-success pull-right"

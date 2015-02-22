@@ -17,5 +17,6 @@ class Good < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   belongs_to :category
   validates :name, :price, :category_id, presence: true
+  accepts_nested_attributes_for :photos
 
 end

@@ -21,4 +21,5 @@ RSpec.describe Good, type: :model do
   it { should belong_to :category }
   it { should have_many :cart_items }
   it { should have_many :photos }
+  it { should accept_nested_attributes_for :photos }
 end

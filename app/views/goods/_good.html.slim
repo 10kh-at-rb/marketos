@@ -2,7 +2,7 @@
   .thumbinail
       h3
         = link_to good.name, good_path(good)
-      img src="http://placehold.it/300x200" alt=""
+      =good_image(good)
       p.price
         =number_to_currency good.price
       .actions
