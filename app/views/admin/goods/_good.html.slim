@@ -1,0 +1,9 @@
+.good
+  .thumbinail
+    h3
+      = link_to good.name, good_path(good)
+    =good_image(good)
+  p.price
+    =number_to_currency good.price
+  .actions
+    =link_to t(:edit), edit_admin_good_path(good)

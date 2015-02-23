@@ -9,6 +9,10 @@ class Admin::CategoriesController < Admin::AdminController
     respond_with @category
   end
 
+  def show
+    respond_with @category
+  end
+
   def create
     respond_with(@category = Category.create(category_params), location:  admin_categories_path )
   end
