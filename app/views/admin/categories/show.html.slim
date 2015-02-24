@@ -1,1 +1,7 @@
-=render @category.goods
+-@category.goods.each do |good|
+  .col-md-4
+    h3 
+      =link_to good.name, admin_good_path(good)
+    =good_image(good)
+    p.price
+      =number_to_currency good.price

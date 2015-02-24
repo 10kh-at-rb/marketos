@@ -1,8 +1,10 @@
 .good
   .thumbinail
     h3
-      = link_to good.name, good_path(good)
+      = good.name
     =good_image(good)
+  p.description
+    =good.description
   p.price
     =number_to_currency good.price
   .actions
