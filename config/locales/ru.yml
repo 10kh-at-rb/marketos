@@ -11,6 +11,7 @@ ru:
   order_created: 'Спасибо за заказ %{name}'
 
   categories: 'Каталог'
+  articles: 'Статьи'
   show_cart: 'Показать'
 
   add_to_cart: 'Купить'

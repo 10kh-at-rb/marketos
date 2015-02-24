@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index'
     resources :categories
     resources :goods
+    resources :articles
   end
 
   root 'categories#index'

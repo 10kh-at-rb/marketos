@@ -1,0 +1,6 @@
+h3
+  =@article.title
+.article-body
+  =raw @article.body
+.actions
+  =link_to t(:edit), edit_admin_article_path(@article)

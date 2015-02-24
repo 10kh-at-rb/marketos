@@ -14,6 +14,7 @@
 //= require jquery-ui/effect-highlight
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require bootstrap3-editable/bootstrap-editable
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .

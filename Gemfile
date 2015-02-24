@@ -36,6 +36,7 @@ gem 'russian', '~> 0.6.0'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'nested_form'
+gem 'bootstrap-x-editable-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

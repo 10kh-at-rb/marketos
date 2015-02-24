@@ -22,7 +22,9 @@ feature 'user can change item quantity in cart', js: true do
   scenario 'user tries to decrease item quantity when quantity > 1' do
 
     find("a[id^='increase-item']").click
+    sleep 1
     find("a[id^='decrease-item']").click
+    sleep 1
 
     within '.quantity_value' do
       expect(page).to have_content '1'

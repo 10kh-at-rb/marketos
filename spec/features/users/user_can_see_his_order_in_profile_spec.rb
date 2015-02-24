@@ -20,12 +20,12 @@ feature 'Registred user can see his order in profile', js: true do
 
   scenario 'user visits his profile' do
     visit profile_path
-    find("a[data-parent='#accordion']").click
-
+    within '.panel' do
+      find("a").click
+    end
+    
     expect(page).to have_content t("notification_orders", count: 1)
-    expect(page).to have_content 'First good'
-    expect(page).to have_content 'Second good'
-
+    
   end
 
   scenario 'guest tries to visit profile' do
