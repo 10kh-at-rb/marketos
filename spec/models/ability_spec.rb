@@ -9,6 +9,7 @@ describe Ability do
 
     it { should be_able_to :read, Good }
     it { should be_able_to :read, Category }
+    it { should be_able_to :read, Article }
     it { should be_able_to :create, Order }
     it { should be_able_to :manage, Cart }
     it { should be_able_to :manage, CartItem }

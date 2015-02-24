@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   delete 'logout', to: 'sessions#destroy', as: :logout
   get 'profile', to: 'users#show', as: :profile
+  get 'article/:id', to: 'articles#show', as: :article
   resources :users, only: [:create]
   resources :sessions, only: [:create]
 
