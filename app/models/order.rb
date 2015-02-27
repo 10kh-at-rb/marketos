@@ -11,9 +11,12 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :integer
+#  status       :string
+#  aasm_state   :string
 #
 
 class Order < ActiveRecord::Base
+  include AASM
   PAYMENT_TYPES = %w(Cash Card)
 
   has_many :cart_items
@@ -21,6 +24,25 @@ class Order < ActiveRecord::Base
 
   validates :name, :phone, :payment_type, presence: true
   validates :payment_type, inclusion: PAYMENT_TYPES
+
+  aasm do
+    state :created, initial: true
+    state :in_work
+    state :delivery
+    state :finished
+
+    event :work do
+      transitions from: :created, to: :in_work
+    end    
+
+    event :delivery do
+      transitions from: :in_work, to: :delivery
+    end
+
+    event :finish do
+      transitions from: :delivery, to: :finished
+    end
+  end
 
   def add_items_from_cart(cart)
     cart.cart_items.each do |item|
