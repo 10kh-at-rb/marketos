@@ -14,8 +14,10 @@ ru:
   articles: 'Статьи'
   show_cart: 'Показать'
 
-  active: Активные
-  finished: Заверешенные
+  active: 'Активные'
+  finished: 'Заверешенные'
+
+  total: 'Всего'
 
   add_to_cart: 'Купить'
   add_photo: 'Добавить фото'
@@ -68,6 +70,9 @@ ru:
         title: название
         description: описание
         picture: изображение
+      cart_item:
+        quantity: количество
+        total_price: сумма
       order:
         name: Имя покупателя
         email: электронная почта

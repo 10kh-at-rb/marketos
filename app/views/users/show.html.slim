@@ -12,8 +12,7 @@ ul.nav.nav-tabs
       = t(:finished)
 .tab-content
   .tab-pane.active id="active"
-    .panel-group#accordion
-      =render current_user.orders.active
+    = render 'orders/plain_orders', orders: current_user.orders.active
   .tab-pane id="finished"
     .panel-group#accordion
       =render current_user.orders.finished

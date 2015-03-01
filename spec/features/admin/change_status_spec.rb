@@ -9,20 +9,40 @@ feature 'admin can change order status', js: true do
     visit admin_path
   end
 
-  context 'from created to working' do    
-    # before do
-    #   visit admin_path
-    #   # find("a[data-toggle='collapse']").click
-    #   save_and_open_page
-    #   find("a[href*='change_status']").click
-    # end
-
-    # scenario 'from created to work' do
-    #   expect(page).to have_content t('activerecord.attributes.order.aasm_state.in_work')
-    # end
+  context 'initial status is created' do
+    scenario 'created' do
+      expect(page).to have_content t('activerecord.attributes.order.aasm_state.created')
+    end
   end
 
-  scenario 'from working to delivery'
-  scenario 'from delivery to finished'
+  context 'from created to working' do    
+    before do
+      find("a[href*='change_status']").click
+    end
+
+    scenario 'from created to work' do
+      expect(page).to have_content t('activerecord.attributes.order.aasm_state.in_work')
+    end
+  end
+
+  context 'delivery' do
+    before do
+      2.times { find("a[href*='change_status']").click }
+    end
+
+    scenario 'from working to delivery' do
+      expect(page).to have_content t('activerecord.attributes.order.aasm_state.delivery')
+    end
+  end
+
+  # context 'finished' do
+  #   before do
+  #     2.times { find("a[href*='change_status']").click }
+  #   end
+
+  #   scenario 'finished order is not visible' do
+  #     expect(page).to_not have_content ''
+  #   end
+  # end
 
 end

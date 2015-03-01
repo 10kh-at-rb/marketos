@@ -1,0 +1,6 @@
+- orders.each do |order|
+  .order.col-md-12 id="orderwrapper-#{order.id}"
+    .order-title
+      h4
+        = "#{t(:order)} #{order.id}: #{order.aasm.human_state}"
+    =render 'orders/order_table', order: order

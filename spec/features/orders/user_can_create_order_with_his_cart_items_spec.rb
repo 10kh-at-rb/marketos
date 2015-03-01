@@ -22,7 +22,7 @@ feature 'user can create with his cart items', js: true do
 
   context 'when current cart is not empty' do
 
-    scenario 'with valid attributes' do
+    scenario 'with valid attributes', js: true do
 
       find("a[href='/orders/new']").click
 
@@ -31,7 +31,7 @@ feature 'user can create with his cart items', js: true do
       find("textarea[id='order_address']").set('North Pole' )
 
       find("input[type='submit']").click
-
+      
       expect(page).to have_content t(:order_created, name: 'Sergey')
       expect(page).to have_content '0123456789'
       expect(page).to have_content 'North Pole'
