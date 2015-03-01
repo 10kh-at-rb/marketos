@@ -21,6 +21,7 @@ ru:
   save: 'Сохранить'
   edit: 'Редактировать'
   destroy: 'Удалить'
+  change_status: 'Сменить статус'
 
   dashboard: 'Заказы'
   actions: 'Операции'

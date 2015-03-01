@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :goods
     resources :articles
+    resources :orders do
+      patch 'change_status', on: :member
+    end
   end
 
   root 'categories#index'
