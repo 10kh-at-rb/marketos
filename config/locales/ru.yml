@@ -14,6 +14,9 @@ ru:
   articles: 'Статьи'
   show_cart: 'Показать'
 
+  active: Активные
+  finished: Заверешенные
+
   add_to_cart: 'Купить'
   add_photo: 'Добавить фото'
   save_order: 'Разместить заказ'

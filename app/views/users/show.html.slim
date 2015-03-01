@@ -2,13 +2,18 @@ h3
   =current_user.name
 p.orders
   = t "notification_orders", count: current_user.orders.count
-.panel-group#accordion
-  -current_user.orders.each do |order|
-    .panel.panel-default
-      .panel-heading
-        h4.panel-title
-          a data-toggle="collapse" data-parent="#accordion" href="#order-#{order.id}"
-            = "#{t(:order)} #{order.id}"
-      div id="order-#{order.id}" class="panel-collapse collapse"
-        .panel-body
-          =render order
+
+ul.nav.nav-tabs
+  li.active
+    a href='#active' data-toggle='tab'
+      = t(:active)
+  li
+    a href='#finished' data-toggle='tab'
+      = t(:finished)
+.tab-content
+  .tab-pane.active id="active"
+    .panel-group#accordion
+      =render current_user.orders.active
+  .tab-pane id="finished"
+    .panel-group#accordion
+      =render current_user.orders.finished

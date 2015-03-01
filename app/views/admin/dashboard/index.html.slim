@@ -2,16 +2,17 @@ h3
   = "Hello #{current_user.name}"
 p.orders
   = t "notification_orders", count: @orders.count
-.panel-group#accordion
-  / -@orders.each do |order|
-  /   .panel.panel-default
-  /     .panel-heading
-  /       h4.panel-title
-  /         a data-toggle="collapse" data-parent="#accordion" href="#order-#{order.id}"
-  /           = "#{t(:order)} #{order.id}: #{order.aasm.human_state}"
-  /         / =render 'admin/orders/actions', order: order
-  /     div id="order-#{order.id}" class="panel-collapse collapse"
-  /       .panel-body
-  /         =render 'orders/order', order: order
-  /         =render 'admin/orders/actions', order: order
-  =render @orders
+ul.nav.nav-tabs
+  li.active
+    a href='#active' data-toggle='tab'
+      = t(:active)
+  li
+    a href='#finished' data-toggle='tab'
+      = t(:finished)
+.tab-content
+  .tab-pane.active id="active"
+    .panel-group#accordion
+      =render @orders.active
+  .tab-pane id="finished"
+    .panel-group#accordion
+      =render @orders.finished

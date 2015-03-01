@@ -18,9 +18,11 @@
 class Order < ActiveRecord::Base
   include AASM
   PAYMENT_TYPES = %w(Cash Card)
-
+  default_scope { order('created_at DESC') }
   has_many :cart_items
   belongs_to :user
+
+  scope :active, -> { where(aasm_state: [:created, :delivery, :in_work]) }
 
   validates :name, :phone, :payment_type, presence: true
   validates :payment_type, inclusion: PAYMENT_TYPES

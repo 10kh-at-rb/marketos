@@ -3,8 +3,7 @@
     h4.panel-title
       a data-toggle="collapse" data-parent="#accordion" href="#order-#{order.id}"
         = "#{t(:order)} #{order.id}: #{order.aasm.human_state}"
-      / =render 'admin/orders/actions', order: order
   div id="order-#{order.id}" class="panel-collapse collapse"
     .panel-body
-      =render 'orders/order', order: order
+      =render 'orders/order_table', order: order
       =render 'admin/orders/actions', order: order
