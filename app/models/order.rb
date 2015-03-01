@@ -54,4 +54,17 @@ class Order < ActiveRecord::Base
     cart_items.map(&:total_price).sum
   end
 
+  def change_status
+    if self.may_work?
+      self.work!
+      return
+    elsif self.may_delivery?
+      self.delivery!
+      return
+    elsif self.may_finish?
+      self.finish!
+      return
+    end
+  end
+
 end

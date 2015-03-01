@@ -47,4 +47,46 @@ RSpec.describe Order, type: :model do
     end
   end
 
+  describe 'change status' do
+    let(:order) { create(:order) }
+
+    context 'initial state is created' do
+      it 'should be created' do
+        expect(order.aasm_state).to eq "created"
+      end
+    end
+
+    context 'next status should be in_work' do
+      before { order.change_status }
+      it 'should be in_work' do
+        expect(order.aasm_state).to eq "in_work"
+      end
+    end
+
+    context 'next status should be delivery' do
+      before do
+        2.times do
+          order.change_status
+        end
+      end
+
+      it 'should be delivery' do
+        expect(order.aasm_state).to eq "delivery"
+      end
+    end
+
+    context 'next status should be finished' do
+      before do
+        3.times do
+          order.change_status
+        end
+      end
+
+      it 'should be finished' do
+        expect(order.aasm_state).to eq "finished"
+      end
+    end
+
+  end
+
 end

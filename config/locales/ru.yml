@@ -70,5 +70,10 @@ ru:
         phone: телефон
         address: адрес
         payment_type: способ оплаты
+        aasm_state: 
+          created: Создан
+          in_work: В работе
+          delivery: В доставке
+          finished: Завершен
       photo:
         file: Фото
