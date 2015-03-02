@@ -38,6 +38,8 @@ gem 'mini_magick'
 gem 'nested_form'
 gem 'bootstrap-x-editable-rails'
 gem 'aasm'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

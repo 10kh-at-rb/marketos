@@ -37,6 +37,10 @@ ru:
   add_category: 'Добавить категорию'
   add_good: 'Добавить товар'
 
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+
   number:
     currency:
       format:
