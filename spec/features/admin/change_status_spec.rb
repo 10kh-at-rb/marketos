@@ -25,24 +25,4 @@ feature 'admin can change order status', js: true do
     end
   end
 
-  context 'delivery' do
-    before do
-      2.times { find("a[href*='change_status']").click }
-    end
-
-    scenario 'from working to delivery' do
-      expect(page).to have_content t('activerecord.attributes.order.aasm_state.delivery')
-    end
-  end
-
-  # context 'finished' do
-  #   before do
-  #     2.times { find("a[href*='change_status']").click }
-  #   end
-
-  #   scenario 'finished order is not visible' do
-  #     expect(page).to_not have_content ''
-  #   end
-  # end
-
 end

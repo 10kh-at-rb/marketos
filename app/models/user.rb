@@ -29,4 +29,6 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :name, :email, :password_confirmation, presence:  true
 
+  scope :admins, -> { where(admin: true) }
+
 end

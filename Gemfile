@@ -41,6 +41,8 @@ gem 'aasm'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'rails-observers'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -74,5 +76,6 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'letter_opener'
 end
 

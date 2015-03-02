@@ -10,6 +10,8 @@ ru:
     many: 'У вас %{count} активных заказов'
   order_created: 'Спасибо за заказ %{name}'
 
+  new_order: 'Новый заказ'
+
   categories: 'Каталог'
   articles: 'Статьи'
   show_cart: 'Показать'
