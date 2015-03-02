@@ -4,6 +4,6 @@ class Admin::OrdersController < Admin::AdminController
 
   def change_status
     @order.change_status
-    respond_with @order
+    respond_with @orders = Order.active
   end
 end

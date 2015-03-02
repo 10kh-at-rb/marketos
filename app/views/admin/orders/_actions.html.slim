@@ -1,2 +1,2 @@
 .pull-right.actions
-  =link_to t(:change_status),  change_status_admin_order_path(order), method: :patch , class: 'btn btn-warning', remote: true
+  =link_to t(:change_status),  change_status_admin_order_path(order), method: :patch , class: 'btn btn-warning', remote: true unless order.aasm_state == 'finished'

@@ -1,7 +1,7 @@
 h3
   =current_user.name
 p.orders
-  = t "notification_orders", count: current_user.orders.count
+  = t "notification_orders", count: current_user.orders.active.count
 
 ul.nav.nav-tabs
   li.active

@@ -1,1 +1,1 @@
-$('#orderwrapper-<%= @order.id %>').html('<%= j render @order %>');
+$('#active').html('<%= j render 'admin/orders/plain_orders', orders: @orders %>');

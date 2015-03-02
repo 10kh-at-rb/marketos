@@ -1,7 +1,7 @@
 h3
   = "Hello #{current_user.name}"
 p.orders
-  = t "notification_orders", count: @orders.count
+  = t "notification_orders", count: @orders.active.count
 ul.nav.nav-tabs
   li.active
     a href='#active' data-toggle='tab'

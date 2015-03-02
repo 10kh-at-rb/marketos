@@ -5,9 +5,9 @@ ru:
   you_have: 'У вас'
   order: 'заказ'
   notification_orders:
-    one: 'У вас 1 заказ'
-    few: 'У вас %{count} заказа'
-    many: 'У вас %{count} заказов'
+    one: 'У вас 1 активный заказ'
+    few: 'У вас %{count} активных заказа'
+    many: 'У вас %{count} активных заказов'
   order_created: 'Спасибо за заказ %{name}'
 
   categories: 'Каталог'
