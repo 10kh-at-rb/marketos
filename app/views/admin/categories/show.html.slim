@@ -1,7 +1,15 @@
--@category.goods.each do |good|
-  .col-md-4
-    h3 
-      =link_to good.name, admin_good_path(good)
-    =good_image(good)
-    p.price
-      =number_to_currency good.price
+table.table.table-hover
+  thead
+    td =t('activerecord.attributes.good.name')
+    td =t('activerecord.attributes.good.description')
+    td =t('activerecord.attributes.good.price')
+    td =t('activerecord.attributes.good.sale')
+  tbody
+    -@category.goods.each do |good|
+      =content_tag(:tr, class: "good-#{good.id}")
+        td = good.name
+        td = good.description
+        td = number_to_currency good.price
+        td
+          = form_for(good, remote: true, url: admin_good_path(good)) do |f|
+            =f.check_box :sale, onchange: '$(this.form).submit()'

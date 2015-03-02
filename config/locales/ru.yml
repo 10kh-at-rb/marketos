@@ -72,6 +72,7 @@ ru:
         description: описание
         price: цена
         category_id: Категория
+        sale: Распродажа
       category:
         title: название
         description: описание

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_categories_for_sidebar
   before_action :set_current_cart
+  before_action :set_sale_items
   respond_to :html
 
   private
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound
     @current_cart = Cart.create
     session[:cart_id] = @current_cart.id
+  end
+
+  def set_sale_items
+    @sale_items = Good.sale
   end
 end
