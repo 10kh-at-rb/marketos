@@ -22,8 +22,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   delete 'logout', to: 'sessions#destroy', as: :logout
   get 'profile', to: 'users#show', as: :profile
+  get 'profile/edit', to: 'users#edit', as: 'edit_profile'
   get 'article/:id', to: 'articles#show', as: :article
-  resources :users, only: [:create]
+  resources :users, only: [:create, :update]
   resources :sessions, only: [:create]
 
   namespace :admin do

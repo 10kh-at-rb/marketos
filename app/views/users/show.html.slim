@@ -10,9 +10,14 @@ ul.nav.nav-tabs
   li
     a href='#finished' data-toggle='tab'
       = t(:finished)
+  li
+    a href='#profile' data-toggle='tab'
+      =t(:show_profile)
 .tab-content
   .tab-pane.active id="active"
     = render 'orders/plain_orders', orders: current_user.orders.active
   .tab-pane id="finished"
     .panel-group#accordion
       =render current_user.orders.finished
+  .tab-pane id="profile"
+    =render 'user_data'

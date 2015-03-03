@@ -1,0 +1,10 @@
+h3
+  =current_user.name
+p.email
+  =current_user.email
+p.phone
+  =current_user.phone
+p.address
+  =current_user.address
+p.actions
+  =link_to t(:edit_profile), edit_profile_path, remote: true
