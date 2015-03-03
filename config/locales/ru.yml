@@ -30,6 +30,9 @@ ru:
   destroy: 'Удалить'
   change_status: 'Сменить статус'
 
+  delete_all_from_cart: 'Удалить все из корзины'
+  checkout: 'Оформить заказ'
+
   dashboard: 'Заказы'
   actions: 'Операции'
   admin_categories: 'Категории'

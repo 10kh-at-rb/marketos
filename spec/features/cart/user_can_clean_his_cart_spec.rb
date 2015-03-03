@@ -11,7 +11,7 @@ feature 'user can clean his cart', js: true do
   scenario 'user deletes all items from cart' do
     visit cart_path
 
-    click_on 'Delete all from cart' 
+    click_on t(:delete_all_from_cart)
 
     expect(page).to_not have_content good.name
   end

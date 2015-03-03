@@ -1,5 +1,5 @@
 -unless @current_cart.empty?
-  .current_cart
+  .current_cart.col-md-12
     table.table.table-hover
       thead
         td Item name
@@ -10,6 +10,6 @@
         -@current_cart.cart_items.each do |item|
           =content_tag(:tr, class: "item-#{item.id}")
             =render 'cart_items/cart_item_in_cart', item: item
-  =link_to "Delete all from cart", delete_cart_path, method: :delete, id: 'clean-cart', class: "btn btn-danger"
+  =link_to t(:delete_all_from_cart), delete_cart_path, method: :delete, id: 'clean-cart', class: "btn btn-danger"
   br
-  =link_to "Checkout", new_order_path, class: "btn btn-success", disabled: @current_cart.empty?
+  =link_to t('checkout'), new_order_path, class: "btn btn-success", disabled: @current_cart.empty?
