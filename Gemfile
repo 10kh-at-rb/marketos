@@ -40,6 +40,8 @@ gem 'bootstrap-x-editable-rails'
 gem 'aasm'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'slick_rails'
+gem 'jquery-turbolinks'
 
 gem 'rails-observers'
 

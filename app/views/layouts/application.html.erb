@@ -16,7 +16,11 @@
       <%= render 'layouts/sidebar' %> 
     </div>
     <div class="col-md-10">
-      <%= yield %>
+      <div class="row">
+        <%= render 'layouts/sale_items' %> 
+
+        <%= yield %>
+      </div>
     </div>
   </div>
 </div>

@@ -12,9 +12,21 @@
 //
 //= require jquery
 //= require jquery-ui/effect-highlight
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require slick
 //= require bootstrap3-editable/bootstrap-editable
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.sale').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+});

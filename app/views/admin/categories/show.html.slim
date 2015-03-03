@@ -4,6 +4,7 @@ table.table.table-hover
     td =t('activerecord.attributes.good.description')
     td =t('activerecord.attributes.good.price')
     td =t('activerecord.attributes.good.sale')
+    td =t(:actions)
   tbody
     -@category.goods.each do |good|
       =content_tag(:tr, class: "good-#{good.id}")
@@ -13,3 +14,4 @@ table.table.table-hover
         td
           = form_for(good, remote: true, url: admin_good_path(good)) do |f|
             =f.check_box :sale, onchange: '$(this.form).submit()'
+        td = link_to t(:edit), edit_admin_good_path(good)

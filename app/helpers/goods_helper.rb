@@ -8,4 +8,12 @@ module GoodsHelper
     end
   end
 
+  def good_image_small(good)
+    if good.photos.first
+      image_tag good.photos.first.file.small_thumb.url alt: good.name
+    else
+      "w/o photo"
+    end
+  end
+
 end
