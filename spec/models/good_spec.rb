@@ -45,4 +45,18 @@ RSpec.describe Good, type: :model do
       end
     end
   end
+
+  describe '.top_selled method' do
+    let!(:goods) { create_list(:good, 5) }
+    let!(:order) { create(:order) }
+    before do
+      goods[0..3].each do |good|
+        order.cart_items.create!(good_id: good.id, quantity: 2)
+      end
+    end
+
+    it 'should return goods[0..3]' do
+      expect(Good::top_selled(10)).to match_array goods[0..3]
+    end
+  end
 end

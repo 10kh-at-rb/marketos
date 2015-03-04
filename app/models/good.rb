@@ -26,4 +26,9 @@ class Good < ActiveRecord::Base
     self.update!(sale: !sale)
   end
 
+  def self.top_selled(limit)
+    query = CartItem.select("good_id").group("good_id").order("sum(quantity) DESC").limit(limit).map(&:good_id)
+    find(query)
+  end
+
 end
