@@ -20,10 +20,15 @@
 #
 
 class User < ActiveRecord::Base
-  authenticates_with_sorcery!
+  authenticates_with_sorcery! do |config|
+    config.authentication_class = Authentication
+  end
 
   has_one :cart
   has_many :orders
+  has_many :authentications, dependent: :destroy
+
+  accepts_nested_attributes_for :authentications
 
   validates :password, length: { minimum: 4 }
   validates :password, confirmation: true

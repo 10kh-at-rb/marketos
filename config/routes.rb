@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'oauths/oauth'
+
+  get 'oauths/callback'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :categories, shallow: true, only: [:index, :show] do
@@ -24,6 +28,11 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#show', as: :profile
   get 'profile/edit', to: 'users#edit', as: 'edit_profile'
   get 'article/:id', to: 'articles#show', as: :article
+
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => 'oauths#callback'
+  get 'oauth/:provider' => 'oauths#oauth', as: :auth_at_provider
+
   resources :users, only: [:create, :update]
   resources :sessions, only: [:create]
 
@@ -77,7 +86,7 @@ Rails.application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with concerns:
+  # Example resource r oute with concerns:
   #   concern :toggleable do
   #     post 'toggle'
   #   end
