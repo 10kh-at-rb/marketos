@@ -1,0 +1,11 @@
+fieldset
+  .form-group
+    = f.label :title
+    = render 'shared/error_message', attribute: :title, model: @article
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :body
+    = render 'shared/error_message', attribute: :body, model: @article
+    = f.text_area :body, class: 'form-control'
+  
+  =f.submit t(:save), class: "btn btn-success pull-right"

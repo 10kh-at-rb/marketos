@@ -41,6 +41,7 @@ ru:
 
   add_category: 'Добавить категорию'
   add_good: 'Добавить товар'
+  add_article: 'Добавить статью'
 
   show_profile: 'Показать данные'
   edit_profile: 'Изменить данные'

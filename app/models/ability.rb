@@ -23,6 +23,8 @@ class Ability
   def user_ability
     guest_ability
     can :create, Order
+    can(:edit, User) { |resource| resource == user }
+    can(:update, User) { |resource| resource == user }
   end
 
   def admin_ability

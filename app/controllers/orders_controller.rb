@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = current_user ? current_user.orders.new(name: current_user.name, phone: current_user.phone, address: current_user.address) : Order.new
+    @order = current_user ? current_user.orders.new(name: current_user.name, email: current_user.email, phone: current_user.phone, address: current_user.address) : Order.new
     respond_with @order
   end
 

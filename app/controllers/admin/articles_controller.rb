@@ -5,6 +5,15 @@ class Admin::ArticlesController < Admin::AdminController
     respond_with @articles
   end
 
+  def new
+    respond_with @article
+  end
+
+  def create
+    @article.save
+    respond_with @article
+  end
+
   def show
     respond_with @article
   end
@@ -15,7 +24,7 @@ class Admin::ArticlesController < Admin::AdminController
 
   def update
     @article.update(article_params)
-    respond_with @article
+    respond_with(@article, location: admin_articles_path)
   end
 
   private
