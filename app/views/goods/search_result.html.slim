@@ -1,0 +1,8 @@
+.results
+  -@goods.each do |good|
+    .good
+      = link_to good.name, good_path(good)
+      p.description
+        = good.description
+      p.price
+        = number_to_currency good.price

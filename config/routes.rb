@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update]
   resources :sessions, only: [:create]
 
+  get 'search', to: 'search#find', as: :search
+
   namespace :admin do
     get '/', to: 'dashboard#index'
     resources :categories

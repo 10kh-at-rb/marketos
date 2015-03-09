@@ -43,6 +43,9 @@ gem 'bootstrap-will_paginate'
 gem 'slick_rails'
 gem 'jquery-turbolinks'
 
+gem 'mysql2'
+gem 'thinking-sphinx'
+
 gem 'rails-observers'
 
 # Use ActiveModel has_secure_password
