@@ -6,6 +6,7 @@ feature 'users can sign out' do
   before { sign_in(user) }
 
   scenario 'user tries to sign out' do
+    
     within('.navbar') do
       click_on t('logout')
     end

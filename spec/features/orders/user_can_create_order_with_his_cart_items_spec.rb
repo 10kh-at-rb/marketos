@@ -26,11 +26,13 @@ feature 'user can create with his cart items', js: true do
 
       find("a[href='/orders/new']").click
 
-      find("input[id='order_name']").set('Sergey')
-      find("input[id='order_phone']").set('0123456789')
-      find("textarea[id='order_address']").set('North Pole' )
+      within '.order-form' do
+        find("input[id='order_name']").set('Sergey')
+        find("input[id='order_phone']").set('0123456789')
+        find("textarea[id='order_address']").set('North Pole' )
 
-      find("input[type='submit']").click
+        find("input[type='submit']").click
+      end
       
       expect(page).to have_content t(:order_created, name: 'Sergey')
       expect(page).to have_content '0123456789'
@@ -42,7 +44,9 @@ feature 'user can create with his cart items', js: true do
 
     scenario 'with invalid attributes' do
       find("a[href='/orders/new']").click
-      find("input[type='submit']").click
+      within '.order-form' do
+        find("input[type='submit']").click
+      end
 
       expect(page).to have_content t('activerecord.errors.messages.blank')
     end
@@ -51,7 +55,9 @@ feature 'user can create with his cart items', js: true do
       sign_in(user)
       visit cart_path
       find("a[href='/orders/new']").click
-      find("input[type='submit']").click
+      within '.order-form' do
+        find("input[type='submit']").click
+      end
 
       expect(page).to have_content t(:order_created, name: user.name)
       expect(page).to have_content '0123456789'

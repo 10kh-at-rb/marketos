@@ -1,25 +1,26 @@
-=form_for(@order, html: { role: 'form', class: 'col-md-6' }) do |f|
-  fieldset
-    .form-group
-      =f.label :name
-      = render 'shared/error_message', attribute: :name, model: @order
-      =f.text_field :name, class: 'form-control'
-    .form-group
-      =f.label :email
-      = render 'shared/error_message', attribute: :email, model: @order
-      =f.email_field :email, class: 'form-control'
-    .form-group
-      =f.label :phone
-      = render 'shared/error_message', attribute: :phone, model: @order
-      =f.text_field :phone, class: 'form-control'
-    .form-group
-      =f.label :address
-      = render 'shared/error_message', attribute: :address, model: @order
-      =f.text_area :address, class: 'form-control'
-    .form-group
-      =f.label :payment_type
-      = render 'shared/error_message', attribute: :payment_type, model: @order
-      =f.select :payment_type, Order::PAYMENT_TYPES, {}, { class: 'form-control' }
-    
-    =f.submit t(:save_order), class: "btn btn-success pull-right"
+.col-md-12.order-form
+  =form_for(@order, html: { role: 'form', class: 'col-md-6' }) do |f|
+    fieldset
+      .form-group
+        =f.label :name
+        = render 'shared/error_message', attribute: :name, model: @order
+        =f.text_field :name, class: 'form-control'
+      .form-group
+        =f.label :email
+        = render 'shared/error_message', attribute: :email, model: @order
+        =f.email_field :email, class: 'form-control'
+      .form-group
+        =f.label :phone
+        = render 'shared/error_message', attribute: :phone, model: @order
+        =f.text_field :phone, class: 'form-control'
+      .form-group
+        =f.label :address
+        = render 'shared/error_message', attribute: :address, model: @order
+        =f.text_area :address, class: 'form-control'
+      .form-group
+        =f.label :payment_type
+        = render 'shared/error_message', attribute: :payment_type, model: @order
+        =f.select :payment_type, Order::PAYMENT_TYPES, {}, { class: 'form-control' }
+      
+      =f.submit t(:save_order), class: "btn btn-success pull-right"
 

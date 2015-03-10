@@ -16,8 +16,9 @@ feature 'user can sign in with his account' do
 
   scenario 'with invalid attributes' do
     find("a[href='/login']").click
-    find("input[type='submit']").click
-
+    within '.login-form' do
+      find("input[type='submit']").click
+    end
     expect(page).to have_content t(:invalid_email_or_password)
 
   end
