@@ -7,7 +7,7 @@
         td Price
         td Actions
       tbody
-        -@current_cart.cart_items.each do |item|
+        -@current_cart.cart_items.includes(:good).each do |item|
           =content_tag(:tr, class: "item-#{item.id}")
             =render 'cart_items/cart_item_in_cart', item: item
   =link_to t(:delete_all_from_cart), delete_cart_path, method: :delete, id: 'clean-cart', class: "btn btn-danger"

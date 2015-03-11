@@ -1,5 +1,5 @@
 -unless @current_cart.cart_items.empty?
-  = "#{@current_cart.cart_items.count} #{'item'.pluralize(@current_cart.cart_items.count)}"
+  = "#{@current_cart.cart_items.includes(:good).count} #{'item'.pluralize(@current_cart.cart_items.count)}"
   br
   = "#{number_to_currency @current_cart.total_price}"
   br

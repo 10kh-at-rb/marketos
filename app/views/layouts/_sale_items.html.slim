@@ -1,7 +1,9 @@
 .col-md-12.sale
-  -@sale_items.each do |item|
-    .col-md-4
-      = good_image_small(item)
-      h4 
-        = link_to item.name, good_path(item)
-      = link_to t(:add_to_cart), add_to_cart_good_path(item), method: :post, remote: true
+  -cache(cache_key_for_sale)
+    -@sale_items.each do |item|
+      -cache(item)
+        .col-md-4
+          = good_image_small(item)
+          h4 
+            = link_to item.name, good_path(item)
+          = link_to t(:add_to_cart), add_to_cart_good_path(item), method: :post, remote: true

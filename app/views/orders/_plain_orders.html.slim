@@ -1,4 +1,4 @@
-- orders.each do |order|
+- orders.includes(:cart_items).each do |order|
   .order.col-md-12 id="orderwrapper-#{order.id}"
     .order-title
       h4
