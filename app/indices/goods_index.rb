@@ -5,5 +5,5 @@ ThinkingSphinx::Index.define :good, with: :active_record do
   indexes description
 
   #attributes
-  has created_at, updated_at
+  has created_at, updated_at, category_id
 end
