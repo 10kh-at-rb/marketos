@@ -58,6 +58,9 @@ GEM
       railties (>= 3.0)
     breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
+    bullet (4.14.4)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -259,6 +262,7 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.7.0)
     web-console (2.0.0)
       activemodel (~> 4.0)
       binding_of_caller (>= 0.7.2)
@@ -279,6 +283,7 @@ DEPENDENCIES
   bootstrap-will_paginate
   bootstrap-x-editable-rails
   breadcrumbs_on_rails
+  bullet
   byebug
   cancancan
   capybara

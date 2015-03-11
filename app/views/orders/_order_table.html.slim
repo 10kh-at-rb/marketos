@@ -12,7 +12,7 @@
         td =t('activerecord.attributes.cart_item.quantity')
         td =t('activerecord.attributes.cart_item.total_price')
       tbody
-        -order.cart_items.each do |item|
+        -order.cart_items.includes(:good).each do |item|
           =content_tag(:tr, class: "item-#{item.id}")
             td = item.good.name
             td = item.quantity

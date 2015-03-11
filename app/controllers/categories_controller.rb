@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     add_breadcrumb @category.title, category_path(@category)
-    @goods = @category.goods.paginate(page: params[:page])
+    @goods = @category.goods.includes(:photos).paginate(page: params[:page])
     respond_with @category
   end
 

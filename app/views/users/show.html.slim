@@ -15,9 +15,9 @@ ul.nav.nav-tabs
       =t(:show_profile)
 .tab-content
   .tab-pane.active id="active"
-    = render 'orders/plain_orders', orders: current_user.orders.active
+    = render 'orders/plain_orders', orders: current_user.orders.includes(:cart_items).active
   .tab-pane id="finished"
     .panel-group#accordion
-      =render current_user.orders.finished
+      =render current_user.orders.includes(:cart_items).finished
   .tab-pane id="profile"
     =render 'user_data'

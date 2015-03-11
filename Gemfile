@@ -60,6 +60,7 @@ gem 'rails-observers'
 group :development do
   gem 'quiet_assets'
   gem 'awesome_print', require: 'ap'
+  gem 'bullet'
 end
 
 group :development, :test do
