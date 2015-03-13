@@ -2,7 +2,7 @@ class Admin::CategoriesController < Admin::AdminController
   load_and_authorize_resource
 
   def index
-    respond_with @categories
+    respond_with @categories = Category.root
   end
 
   def new
