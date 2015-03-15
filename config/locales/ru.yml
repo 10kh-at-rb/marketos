@@ -36,6 +36,7 @@ ru:
   dashboard: 'Заказы'
   actions: 'Операции'
   admin_categories: 'Категории'
+  root_category: 'Пусто'
 
   invalid_email_or_password: 'Указан неправильный email или пароль неверен'
 
@@ -84,6 +85,7 @@ ru:
         title: название
         description: описание
         picture: изображение
+        parent_id: родительская категория
       cart_item:
         quantity: количество
         total_price: сумма

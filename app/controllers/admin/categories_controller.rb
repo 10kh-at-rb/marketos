@@ -2,7 +2,7 @@ class Admin::CategoriesController < Admin::AdminController
   load_and_authorize_resource
 
   def index
-    respond_with @categories = Category.root
+    respond_with @categories = Category.root.includes(:child_categories)
   end
 
   def new
@@ -29,7 +29,7 @@ class Admin::CategoriesController < Admin::AdminController
   private
 
   def category_params
-    params.require(:category).permit(:title, :description, :picture)
+    params.require(:category).permit(:title, :description, :picture, :parent_id)
   end
 
 end

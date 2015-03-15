@@ -1,6 +1,9 @@
 .col-md-12
     ul.breadcrumb
       = render_breadcrumbs :tag => :li, :separator => ""
+- if @category.child_categories
+  .categories.col-md-12
+    = render @category.child_categories
 .goods.col-md-12
   =render @goods
 .col-md-12
