@@ -1,6 +1,6 @@
 class Admin::GoodsController < Admin::AdminController
   load_and_authorize_resource
-  respond_to :js
+
   def show
     respond_with @good
   end

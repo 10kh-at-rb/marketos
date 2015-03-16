@@ -16,10 +16,15 @@
       =f.text_field :price, class: 'form-control'
     .form-group
       =f.fields_for :photos, @good.photos do |ph|
-        .photos
-          =render 'photos', good: @good, ph: ph
         =ph.label :file
-        =ph.file_field :file
+        br
+        -if ph.object.file.url
+          .img
+            =image_tag ph.object.file.small_thumb.url 
+            = ph.hidden_field :_destroy
+            = link_to t(:destroy), '#', class: 'remove_image'
+        -else
+          =ph.file_field :file
       =f.link_to_add t(:add_photo), :photos
     
     =f.submit t(:save), class: "btn btn-success pull-right"
