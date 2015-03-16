@@ -9,6 +9,9 @@
       = render 'shared/error_message', attribute: :parent_id, model: @category
       = f.collection_select :parent_id, Category.all, :id, :title, { include_blank: t(:root_category) }, { class: 'form-control' }
     .form-group
+      - if @category.picture?
+        = image_tag @category.picture.thumb.url, alt: @category.title
+        br
       = f.label :picture
       = render 'shared/error_message', attribute: :picture, model: @category
       = f.file_field :picture
