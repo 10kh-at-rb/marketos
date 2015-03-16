@@ -1,6 +1,6 @@
 class Admin::GoodsController < Admin::AdminController
   load_and_authorize_resource
-
+  respond_to :js
   def show
     respond_with @good
   end
@@ -26,6 +26,6 @@ class Admin::GoodsController < Admin::AdminController
 
   private
   def good_params
-    params.require(:good).permit(:name, :description, :price, :category_id, :sale, photos_attributes: [:id, :file])
+    params.require(:good).permit(:name, :description, :price, :category_id, :sale, photos_attributes: [:id, :file, :_destroy])
   end
 end

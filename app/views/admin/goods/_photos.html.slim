@@ -1,0 +1,5 @@
+-good.photos.each do |img|
+  = image_tag img.file.small_thumb.url alt: good.name
+  = ph.label :_destroy
+  = ph.check_box '_destroy'
+  br
