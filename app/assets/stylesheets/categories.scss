@@ -20,5 +20,9 @@
   .info {
     margin: 1em auto;
     width: 70%;
+
+    .actions {
+      min-height: 50px;
+    }
   }
 }

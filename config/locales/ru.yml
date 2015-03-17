@@ -28,6 +28,7 @@ ru:
   save: 'Сохранить'
   edit: 'Редактировать'
   destroy: 'Удалить'
+  close: 'Закрыть'
   change_status: 'Сменить статус'
 
   delete_all_from_cart: 'Удалить все из корзины'
