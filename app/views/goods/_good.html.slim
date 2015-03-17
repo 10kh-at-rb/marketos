@@ -1,9 +1,11 @@
 .col-md-4
   .thumbinail
-      h3
-        = link_to good.name, good_path(good)
       =good_image(good)
-      p.price
-        =number_to_currency good.price
-      .actions
-        = link_to t(:add_to_cart), add_to_cart_good_path(good), method: :post, remote: true
+      .info.row
+        .col-md-8
+          p.title
+            = link_to good.name, good_path(good)
+          p.price
+            =number_to_currency good.price
+        .col-md-4.actions.pull-right
+          = link_to t(:add_to_cart), add_to_cart_good_path(good), method: :post, remote: true, class: 'btn btn-default'
