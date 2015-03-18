@@ -4,13 +4,18 @@ Rails.application.routes.draw do
 
   get 'oauths/callback'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  resources :categories, shallow: true, only: [:index, :show] do
-    resources :goods, only: [:index, :show] do
-      post 'add_to_cart', on: :member
+  namespace :admin do
+    get '/', to: 'dashboard#index'
+    resources :categories
+    resources :goods
+    resources :articles
+    resources :orders do
+      patch 'change_status', on: :member
     end
   end
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
   # resources :carts, only: :destroy
   get '/cart', to: 'carts#show', as: 'cart'
@@ -38,15 +43,12 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#find', as: :search
 
-  namespace :admin do
-    get '/', to: 'dashboard#index'
-    resources :categories
-    resources :goods
-    resources :articles
-    resources :orders do
-      patch 'change_status', on: :member
+  resources :categories, shallow: true, only: [:index, :show], path: 'catalog' do
+    resources :goods, only: [:index, :show] do
+      post 'add_to_cart', on: :member
     end
   end
+
 
   root 'categories#index'
 
