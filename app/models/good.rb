@@ -14,6 +14,10 @@
 
 class Good < ActiveRecord::Base
 
+  extend FriendlyId
+
+  friendly_id :name, use: [:slugged, :finders]
+
   has_many :cart_items, dependent: :restrict_with_error
   has_many :photos, dependent: :destroy
   belongs_to :category
