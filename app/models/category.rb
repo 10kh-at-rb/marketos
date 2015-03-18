@@ -12,6 +12,10 @@
 #
 
 class Category < ActiveRecord::Base
+
+  extend FriendlyId
+
+  friendly_id :title, use: [:slugged, :finders]
   has_many :goods
   has_many :child_categories, class_name: "Category", foreign_key: "parent_id"
   belongs_to :parent, class_name: "Category"
