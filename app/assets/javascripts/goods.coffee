@@ -7,3 +7,9 @@ $ ->
     $(this).prev('input[type=hidden]').val('1')
     $(this).parent('div').hide()
     event.preventDefault
+
+$ ->
+  $('a.cboxElement').colorbox({
+    rel: 'cboxElement',
+    width: "70%"
+    });

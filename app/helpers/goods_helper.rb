@@ -16,4 +16,12 @@ module GoodsHelper
     end
   end
 
+  def href_for_lightbox(good)
+    if good.photos.empty?
+      '#'
+    else
+      "#{good.photos.first.file.url}"
+    end
+  end
+
 end

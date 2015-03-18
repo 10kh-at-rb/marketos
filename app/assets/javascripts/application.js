@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require slick
+//= require colorbox-rails
 //= require bootstrap3-editable/bootstrap-editable
 //= require bootstrap-sprockets
 //= require turbolinks

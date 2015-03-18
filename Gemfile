@@ -45,6 +45,7 @@ gem 'jquery-turbolinks'
 
 gem 'mysql2'
 gem 'thinking-sphinx'
+gem 'colorbox-rails'
 
 gem 'rails-observers'
 

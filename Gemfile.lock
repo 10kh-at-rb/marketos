@@ -87,6 +87,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
+    colorbox-rails (0.1.2)
+      jquery-rails
+      rails (>= 3.1.1)
     columnize (0.9.0)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
@@ -290,6 +293,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   coffee-rails (~> 4.1.0)
+  colorbox-rails
   database_cleaner
   factory_girl_rails
   jbuilder (~> 2.0)

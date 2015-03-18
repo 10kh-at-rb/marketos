@@ -3,9 +3,19 @@
       = render_breadcrumbs :tag => :li, :separator => ""
 h3
   =@good.name
-p.description
-  =@good.description
-p.price
-  = number_to_currency @good.price
-.actions
-  = link_to t(:add_to_cart), add_to_cart_good_path(@good), method: :post, remote: true
+.col-md-4
+  - if @good.photos.size > 1
+    a.good.cboxElement href="#{href_for_lightbox(@good)}"
+      = good_image(@good)
+  -else
+    = good_image(@good)
+.col-md-8.images
+  .row
+    = render partial: 'goods/photo', collection: @good.photos[1..@good.photos.size], as: :img
+.col-md-12
+  p.description
+    =@good.description
+  p.price
+    = number_to_currency @good.price
+  .actions
+    = link_to t(:add_to_cart), add_to_cart_good_path(@good), method: :post, remote: true
