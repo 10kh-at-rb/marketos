@@ -4,12 +4,12 @@
       .info.row
         .col-md-6
           p.title
-            = link_to good.name, good_path(good)
+            = link_to good.name, category_good_path(good.category, good)
           p.price
             =number_to_currency good.price
         .col-md-3.actions.pull-right
           button class="btn btn-primary show-button hidden" data-toggle="modal" data-target="#good-#{good.id}"
             span.glyphicon.glyphicon-eye-open
         .col-md-3.actions.pull-right
-          = link_to t(:add_to_cart), add_to_cart_good_path(good), method: :post, remote: true, class: 'btn btn-default'
+          = link_to t(:add_to_cart), add_to_cart_category_good_path(good.category, good), method: :post, remote: true, class: 'btn btn-default'
 = render 'goods/modal', good: good

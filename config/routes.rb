@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#find', as: :search
 
-  resources :categories, shallow: true, only: [:index, :show], path: 'catalog' do
+  resources :categories, only: [:index, :show], path: 'catalog' do
     resources :goods, only: [:index, :show] do
       post 'add_to_cart', on: :member
     end

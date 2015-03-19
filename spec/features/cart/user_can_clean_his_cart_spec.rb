@@ -4,7 +4,7 @@ feature 'user can clean his cart', js: true do
   given(:good) { create(:good) }
 
   before do
-    visit good_path(good)
+    visit category_good_path(good.category, good)
     find("a[href*='add_to_cart']").click
   end
 

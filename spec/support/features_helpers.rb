@@ -18,7 +18,7 @@ module FeaturesHelpers
   def create_order(goods)
 
     goods.each do |good|
-      visit good_path(good)
+      visit category_good_path(good.category, good)
       find("a[href*='add_to_cart']").click
     end
 

@@ -7,7 +7,7 @@ feature 'User can delete cart item from cart', js: true do
 
   before do
     [first_good, second_good].each do |good|
-      visit good_path(good)
+      visit category_good_path(good.category, good)
       find("a[href*='add_to_cart']").click
     end
   end

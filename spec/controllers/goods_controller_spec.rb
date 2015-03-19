@@ -5,7 +5,7 @@ RSpec.describe GoodsController, type: :controller do
     let(:good) { create(:good) }
 
     it 'saves cart_item in db' do
-      expect{ post :add_to_cart, id: good.id, format: :js }.to change(good.cart_items, :count).by(1)
+      expect{ post :add_to_cart, id: good.id, category_id: good.category.id, format: :js }.to change(good.cart_items, :count).by(1)
     end
 
   end

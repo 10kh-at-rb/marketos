@@ -5,5 +5,5 @@
         .col-md-4
           = good_image_small(item)
           h4 
-            = link_to item.name, good_path(item)
-          = link_to t(:add_to_cart), add_to_cart_good_path(item), method: :post, remote: true
+            = link_to item.name, category_good_path(item.category, item)
+          = link_to t(:add_to_cart), add_to_cart_category_good_path(item.category, item), method: :post, remote: true

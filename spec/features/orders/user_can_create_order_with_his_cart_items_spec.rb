@@ -7,10 +7,10 @@ feature 'user can create with his cart items', js: true do
   given(:user) { create(:user, name: 'SignedUser', phone: '0123456789', address: 'North Pole') }
 
   before do
-    visit good_path(first_good)
-    find("a[href*='add_to_cart']").click
-    visit good_path(second_good)
-    find("a[href*='add_to_cart']").click
+    [first_good, second_good].each do |good|
+      visit category_good_path(good.category, good)
+      find("a[href*='add_to_cart']").click
+    end
     visit cart_path
   end
 

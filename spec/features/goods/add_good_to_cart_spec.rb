@@ -14,7 +14,7 @@ feature 'user can add good to cart' do
   end
 
   scenario 'from good page', js: :true do
-    visit good_path(good)
+    visit category_good_path(good.category, good)
     find("a[href*='add_to_cart']").click
 
     within '#current-cart' do

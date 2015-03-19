@@ -7,7 +7,7 @@ feature 'Registred user can see his order in profile', js: true do
   before do
     sign_in(user)
     [first_good, second_good].each do |good|
-      visit good_path(good)
+      visit category_good_path(good.category, good)
       find("a[href*='add_to_cart']").click
     end
     visit cart_path

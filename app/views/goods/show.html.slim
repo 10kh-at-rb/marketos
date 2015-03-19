@@ -18,4 +18,4 @@ h3
   p.price
     = number_to_currency @good.price
   .actions
-    = link_to t(:add_to_cart), add_to_cart_good_path(@good), method: :post, remote: true
+    = link_to t(:add_to_cart), add_to_cart_category_good_path(@good.category, @good), method: :post, remote: true

@@ -9,7 +9,7 @@ class GoodsController < ApplicationController
 
   def show
     add_breadcrumb @good.category.title, category_path(@good.category)
-    add_breadcrumb @good.name, good_path(@good)
+    add_breadcrumb @good.name, category_good_path(@good.category, @good)
     respond_with @good
   end
 
